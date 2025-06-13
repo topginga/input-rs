@@ -1,9 +1,9 @@
 [package]
-name = "input-rs"
-version = "0.1.0"
+name = "macroni"
+version = "0.2.0"
 edition = "2024"
-description = "Includes the 'input!' macro which acts like input() from python"
+description = "Helpful macros to speed up development and reduce boilerplate and imports."
 license = "MIT"
-repository = "https://github.com/topginga/input-rs"
+repository = "https://github.com/topginga/macroni"
 
 [dependencies]
