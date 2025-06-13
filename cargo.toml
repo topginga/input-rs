@@ -1,0 +1,9 @@
+[package]
+name = "input-rs"
+version = "0.1.0"
+edition = "2024"
+description = "Includes the 'input!' macro which acts like input() from python"
+license = "MIT"
+repository = "https://github.com/topginga/input-rs"
+
+[dependencies]
