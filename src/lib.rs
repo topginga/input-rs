@@ -26,3 +26,20 @@ macro_rules! sleep {
         std::thread::sleep(std::time::Duration::from_secs_f64(time));
     };
 }
+
+/// Creates a loop which runs for a specified duration of time in seconds.
+/// First parameter is the time, 2nd parameter is the code to loop.
+/// Be sure to put the code you intent to loop inside a block.
+#[macro_export]
+macro_rules! loop_for {
+    ($time:expr, $func:block) => {
+        let start = std::time::Instant::now();
+        let duration = std::time::Duration::from_secs($time);
+        loop {
+            if start.elapsed() >= duration {
+                break;
+        }
+        $func
+        }
+    };
+}
