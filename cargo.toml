@@ -7,14 +7,10 @@ license = "MIT"
 repository = "https://github.com/topginga/macroni"
 
 [dependencies]
-clearscreen = { version = "4.0.1", optional = true }
-rand = { version = "0.9.1", optional = true }
-rdev = { git = "https://github.com/topginga/rdev", version = "0.6.0", optional = true }
-
 
 [features]
 default = []
-rdev = ["dep:rdev"]
-rand = ["dep:rand"]
-clearscreen = ["dep:clearscreen"]
-full = ["dep:rdev", "dep:rand", "dep:clearscreen"]
+rdev = []
+rand = []
+clearscreen = []
+full = []
