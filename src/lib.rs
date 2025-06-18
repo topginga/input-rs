@@ -91,6 +91,38 @@ macro_rules! start_input_listener {
             }
         });
     };
+
+    ($target_function:ident, $var1:expr) => {
+        std::thread::spawn(|| {
+            if let Err(error) = rdev::listen(move |event: Event| detect_input(event, $var1)) {
+                println!("Error: {error:?}");
+            }
+        });
+    };
+
+    ($target_function:ident, $var1:expr, $var2:expr) => {
+        std::thread::spawn(|| {
+            if let Err(error) = rdev::listen(move |event: Event| detect_input(event, $var1, $var2)) {
+                println!("Error: {error:?}");
+            }
+        });
+    };
+
+    ($target_function:ident, $var1:expr, $var2:expr, $var3:expr) => {
+        std::thread::spawn(|| {
+            if let Err(error) = rdev::listen(move |event: Event| detect_input(event, $var1, $var2, $var3)) {
+                println!("Error: {error:?}");
+            }
+        });
+    };
+
+    ($target_function:ident, $var1:expr, $var2:expr, $var3:expr, $var4:expr) => {
+        std::thread::spawn(|| {
+            if let Err(error) = rdev::listen(move |event: Event| detect_input(event, $var1, $var2, $var3, $var4)) {
+                println!("Error: {error:?}");
+            }
+        });
+    };
 }
 
 /// Quickly presses then releases a specific key
