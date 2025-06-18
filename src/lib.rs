@@ -37,8 +37,9 @@ macro_rules! sleep {
 #[macro_export]
 macro_rules! loop_for_secs {
     ($time:expr, $func:block) => {
+        let time = $time as f64;
         let start = std::time::Instant::now();
-        let duration = std::time::Duration::from_secs($time);
+        let duration = std::time::Duration::from_secs_f64(time);
         loop {
             if start.elapsed() >= duration {
                 break;
