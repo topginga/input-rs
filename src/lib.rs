@@ -59,6 +59,7 @@ macro_rules! import_rdev {
         use rdev::*;
         use rdev::EventType::*;
         use rdev::Key::*;
+        use rdev::Button::*;
     };
 }
 
